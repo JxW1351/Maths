@@ -23,3 +23,4 @@ primeFact (a,b) = undefined
 
 fromNorm :: Int -> [(Int,Int)]
 fromNorm a = undefined
+
