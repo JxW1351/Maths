@@ -12,3 +12,5 @@ fermat2 :: Int -> Int -> Bool
 fermat2 x n | n`mod`4 == 1 = fermat (x`div`n)
             | x`mod`(n^2)==0 = fermat (x`div`(n^2))
             | otherwise = False
+
+help = "calc n returns False if n < 0, True if n is the sum of two squares, and False if n is not the sum of two squares"

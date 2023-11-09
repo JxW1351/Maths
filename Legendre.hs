@@ -46,3 +46,5 @@ leastRes a p | (res a p) > (p`div`2) = (res a p) - p
 calc :: Int -> Int -> Int
 calc a p | isPrime p = legendre a p
          | otherwise = -(minBound)
+
+help = "calc a p returns the Legendre symbol (a/p) if p is prime, and -minBound if p is not prime"
