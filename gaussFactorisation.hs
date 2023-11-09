@@ -1,7 +1,7 @@
 help = "Takes an input of (a,b) and returns a list of pairs (c,d) such that the list is a factorisation of a+bi into Irreducibles c+di in the Gaussian Integers Z[i]"
 
 norm :: (Int,Int) -> Int
-norm (a,b) = a^2 + b^2 
+norm (a,b) = a^2 + b^2
 
 isPrime :: Int -> Bool
 isPrime 1 = False
