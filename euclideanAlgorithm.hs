@@ -29,4 +29,4 @@ q a b = do
   let x = (quotient a b)
   modulo a b x
 
-help = "calc (a,b) (c,d) returns a list of all pairs (e,f) such that e+fi is a Highest Common Factor of a+bi and c+di in the Gaussian Integers Z[i]"
+help = "calc (a,b) (c,d) returns a list of all pairs (e,f) such that e+fi is a Highest Common Factor of a+bi and c+di in the Gaussian Integers Z[i], and euc (a,b) (c,d) returns just one highest common factor"
