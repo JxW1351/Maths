@@ -27,7 +27,8 @@ isPrime x | x<0 = isPrime (-x)
 
 primeFact :: Int -> Int -> [(Int,Int)] -- returns [(x,y)] where x is prime and y is the greatest power of x that is a factor of n
 primeFact 1 _ = []
-primeFact n x | x^2 > n = [(n,1)]
+primeFact n x | x == 1 = primeFact n 2
+              | x^2 > n = [(n,1)]
               | n`mod`x == 0 = ((x,y):primeFact (n`div`(x^y)) (x+1))
               | otherwise = primeFact n (x+1)
                      where y = ord x n
