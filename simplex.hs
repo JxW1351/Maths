@@ -1,8 +1,8 @@
 import Control.Monad.State
 
-phase2 :: [[Float]] -> [Float]
-phase2 (x:xs) | m <= 0 = finalValues (x:xs)
-              | otherwise = phase2 (pivot m n (x:xs))
+phase2 :: [[Float]] -> [[Float]]
+phase2 (x:xs) | m <= 0 = {-finalValues-} (x:xs)
+              | otherwise ={- phase2-} (pivot m n (x:xs))
                           where (m,_) = max' x
                                 (n,_) = leastPositive (map (!!m) (x:xs))
 
@@ -41,8 +41,10 @@ divRow m 0 (x:xs) = (map (\y -> y/z) x:xs)
 divRow m n (x:xs) = divRow m (n-1) xs
 
 subRow :: Int -> Int -> [[Float]] -> [[Float]]
-subRow m n xs = map (\x -> subRow' n x (xs!!m)) xs
+subRow m n xs = map (\x -> subRow' (y!!n) x y) xs
+                    where y = xs!!m
 
-subRow' :: Int -> [Float] -> [Float] -> [Float]
-subRow' n (x:xs) (y:ys) = ((x-a*y):subRow' n xs ys)
-                             where a = (y:ys)!!n
+subRow' :: Float -> [Float] -> [Float] -> [Float]
+subRow' _ [] _ = []
+subRow' _ _ [] = []
+subRow' n (x:xs) (y:ys) = ((x-n*y):subRow' n xs ys)
